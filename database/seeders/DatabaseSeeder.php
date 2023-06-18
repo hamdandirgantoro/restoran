@@ -5,8 +5,10 @@ namespace Database\Seeders;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 use App\Models\makanan;
+use App\Models\pesanan;
 use App\Models\User;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Storage;
 
 class DatabaseSeeder extends Seeder
 {
@@ -35,9 +37,24 @@ class DatabaseSeeder extends Seeder
         ]);
 
         User::create([
-            'name' => 'test',
-            'email' => 'test@gmail.com',
-            'password' => 'passwd'
+            'name' => 'admin',
+            'email' => 'admin@gmail.com',
+            'password' => 'passwd',
+            'role' => 'admin'
         ]);
+        pesanan::create([
+            'pemilik' => 'admin',
+            'isi' => 'jamu',
+            'total' => '100000',
+            'terbayar' => 'belum'
+        ]);
+        pesanan::create([
+            'pemilik' => 'admin',
+            'isi' => 'pecel',
+            'total' => '100000',
+            'terbayar' => 'sudah'
+        ]);
+        Storage::deleteDirectory('public');
+        Storage::makeDirectory('public');
     }
 }

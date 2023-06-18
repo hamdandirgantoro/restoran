@@ -1,3 +1,15 @@
+@import "@fortawesome/fontawesome-free/css/all.css";
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap");
+.title {
+    font-family: "EB Garamond", serif;
+}
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.undraggable-link {
+    user-select: none;
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer */
+    -webkit-user-select: none; /* Chrome, Safari, Opera */
+}

@@ -11,13 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('makanans', function (Blueprint $table) {
+        Schema::create('pesanans', function (Blueprint $table) {
             $table->id();
+            $table->string('pemilik');
+            $table->string('isi');
+            $table->integer('total');
+            $table->string('terbayar');
             $table->timestamps();
-            $table->string('nama');
-            $table->integer('harga');
-            $table->string('deskripsi', 1024)->default('kosong');
-            $table->string('foto')->default('public/default.jpg');
         });
     }
 
@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('makanans');
+        Schema::dropIfExists('pesanans');
     }
 };

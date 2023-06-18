@@ -16,23 +16,14 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body class="font-sans antialiased undraggable-link">
-    <div class="min-h-screen bg-amber-200">
-        @include('layouts.navigation')
-
-        <!-- Page Heading -->
-        @if (isset($header))
-        <header class="bg-white shadow">
-            <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                {{ $header }}
-            </div>
-        </header>
-        @endif
+<body class="font-sans antialiased h-screen w-screen undraggable-link">
+    <div class="h-full w-full bg-amber-200 flex">
+        @include('layouts.sidebar')
 
         <!-- Page Content -->
-        <main>
-            {{ $slot }}
-        </main>
+        <div class="h-full w-full">
+            @yield('content')
+        </div>
     </div>
 </body>
 
