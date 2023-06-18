@@ -2,7 +2,8 @@
     @foreach ($makanan as $makanan)
 
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight flex gap-4">
+            <a href="{{ route('dashboard') }}"><i class="fa-solid fa-arrow-left"></i></a>
             <div class="capitalize"> detail {{ $makanan->nama }} </div>
         </h2>
     </x-slot>
